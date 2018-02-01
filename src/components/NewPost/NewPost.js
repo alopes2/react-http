@@ -20,6 +20,9 @@ class NewPost extends Component {
             .then(response => {
                 console.log('Posted');
             })
+            .catch(err => {
+                console.error(err);
+            });
     }
     render () {
         return (
