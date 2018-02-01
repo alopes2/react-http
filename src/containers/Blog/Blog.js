@@ -26,7 +26,12 @@ class Blog extends Component {
                 this.setState({posts: updatedPosts});
                 console.log(response);
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                this.setState((prevState, props) => {
+                    return {error: true}
+                });
+                console.log(error)
+            });
     }
 
     postSelectedHandler = (id) => {
